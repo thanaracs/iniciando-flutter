@@ -19,42 +19,39 @@ class MyApp extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
+          Stack(
+            alignment: AlignmentDirectional.center,
+            
             children: [
-              Container(color: Color.fromARGB(255, 10, 192, 179),width: 75, height: 75,),
-              Container(color: Color.fromARGB(255, 255, 64, 226), height: 75, width: 75,),
-              Container(color: Color.fromARGB(255, 117, 39, 176), height: 75, width: 75,),
+              Container(color: Colors.red, width: 100, height: 100,),
+              Container(color: Colors.blue, width: 50, height: 50,),
+            ],
+          ),
+          Stack(
+            alignment: AlignmentDirectional.center,
+            children: [
+              Container(color: Colors.blue, width: 100, height: 100,),
+              Container(color: Colors.red, width: 50, height: 50,),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(color: Color.fromARGB(255, 0, 255, 204),width: 75, height: 75,),
-              Container(color: Color.fromARGB(255, 242, 201, 215), height: 75, width: 75,),
-              Container(color: Color.fromARGB(255, 236, 161, 0), height: 75, width: 75,),
+              Container(color: Colors.cyan,width: 50, height: 50,),
+              Container(color: Colors.pinkAccent, height: 50, width: 50,),
+              Container(color: Colors.purple, height: 50, width: 50,),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(color: Colors.cyan,width: 75, height: 75,),
-              Container(color: Colors.pinkAccent, height: 75, width: 75,),
-              Container(color: Colors.purple, height: 75, width: 75,),
-            ],
+          Container(color: Colors.amber, height: 30, width: 300,
+          child: Text('Diamante Amarelo', style: TextStyle(color: Colors.black, fontSize: 28), textAlign: TextAlign.center,),
           ),
-          // Container(color: Colors.amber, height: 30, width: 300,
-          // child: Text('Diamante Amarelo', style: TextStyle(color: Colors.black, fontSize: 28), textAlign: TextAlign.center,),
-          // ),
-          // ElevatedButton(
-            // onPressed: (){
-            //   print('Você apertou o botão');
-            // },
-            //  child: Text('Aperte o botão!'),
-            // ),
+          ElevatedButton(
+            onPressed: (){
+              print('Você apertou o botão');
+            },
+             child: Text('Aperte o botão!'),
+            ),
          
       ],
       ),
