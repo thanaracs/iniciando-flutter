@@ -17,9 +17,30 @@ class MyApp extends StatelessWidget {
       ),
       home:Scaffold(
         appBar: AppBar(
-          title: Text('Flutter: Meus primeiros passos'),
+          title: Text('Tarefas'),
           ),
-          body: Container(
+          body: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Task('Aprender Flutter'),
+              Task('Aprender andar de bike'),
+              Task('Meditar'),
+            ],
+          ),
+          floatingActionButton: FloatingActionButton(onPressed: () {} 
+          ),
+         ),
+    );
+  }
+}
+
+class Task extends StatelessWidget {
+  final String nome_task;
+  const Task(this.nome_task, {Key? key}) : super (key: key);
+
+  @override
+  Widget build(BuildContext context){
+    return Container(
             child: Stack( 
               children: [
                 Container(color: Colors.blue, height: 140,),
@@ -34,17 +55,12 @@ class MyApp extends StatelessWidget {
                         width: 72,
                         height: 100,
                       ),
-                      Text('Aprender Flutter'),
+                      Text(nome_task),
                       ElevatedButton(onPressed: (){}, child: Icon(Icons.arrow_drop_up))
                     ],
                   ),)
               ],
             ),
-          ),
-          floatingActionButton: FloatingActionButton(onPressed: () {} 
-          ),
-         ),
-    );
+          );
   }
 }
-
