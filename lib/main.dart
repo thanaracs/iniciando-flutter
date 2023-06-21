@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:primeiro_app/components/components.dart';
+// import 'package:primeiro_app/components/components.dart' as components;
 
-import 'difficulty.dart';
-import 'task.dart';
 
 void main() {
   runApp(MyApp());
