@@ -18,7 +18,6 @@ class _TasksState extends State<Tasks> {
   int nivel = 0;
 
   Widget build(BuildContext context) {
-    var dificuldade;
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Stack(
@@ -26,7 +25,7 @@ class _TasksState extends State<Tasks> {
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color:(widget.dificuldade == nivel) ? Color.fromARGB(255, 149, 33, 243) : Colors.blue,
+              color:(widget.dificuldade == nivel) ? const Color.fromARGB(255, 149, 33, 243) : Colors.blue,
               // color: ,
             ),
             height: 140,
