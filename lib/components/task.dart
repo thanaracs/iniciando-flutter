@@ -25,13 +25,14 @@ class _TasksState extends State<Tasks> {
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
-              color:(widget.dificuldade == nivel) ? const Color.fromARGB(255, 149, 33, 243) : Colors.blue,
+              color: (widget.dificuldade == nivel)
+                  ? const Color.fromARGB(255, 149, 33, 243)
+                  : Colors.blue,
               // color: ,
             ),
             height: 140,
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 decoration: BoxDecoration(
@@ -43,16 +44,19 @@ class _TasksState extends State<Tasks> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50)),
-                      width: 72,
-                      height: 100,
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(50),
-                        child: Image.network(
-                          widget.foto,
-                          fit: BoxFit.contain,
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(50)),
+                        width: 50,
+                        height: 50,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(50),
+                          child: Image.network(
+                            widget.foto,
+                            fit: BoxFit.contain,
+                          ),
                         ),
                       ),
                     ),
@@ -61,12 +65,11 @@ class _TasksState extends State<Tasks> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Container(
-                          width: 200,
+                          width: 160,
                           child: Text(
                             widget.nome,
                             style: const TextStyle(
-                                fontSize: 24,
-                                overflow: TextOverflow.ellipsis),
+                                fontSize: 20, overflow: TextOverflow.ellipsis),
                           ),
                         ),
                         Difficulty(
@@ -75,30 +78,53 @@ class _TasksState extends State<Tasks> {
                       ],
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Container(
-                        height: 52,
-                        width: 52,
-                        child: ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              nivel < widget.dificuldade ? nivel++ : nivel;
-                            });
-                          },
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: const [
-                              Icon(Icons.arrow_drop_up),
-                              Text(
-                                'UP',
-                                style: TextStyle(fontSize: 12),
+                      padding: const EdgeInsets.all(5.0),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            height: 52,
+                            width: 52,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  nivel = 0;
+                                });
+                              },
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: const [
+                                  Icon(Icons.restore),
+                                ],
                               ),
-                            ],
+                            ),
                           ),
-                        ),
+                          const SizedBox(width: 5),
+                          SizedBox(
+                            height: 52,
+                            width: 52,
+                            child: ElevatedButton(
+                              onPressed: () {
+                                setState(() {
+                                  nivel < widget.dificuldade ? nivel++ : nivel;
+                                });
+                              },
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                crossAxisAlignment: CrossAxisAlignment.end,
+                                children: const [
+                                  Icon(Icons.arrow_drop_up),
+                                  Text(
+                                    'UP',
+                                    style: TextStyle(fontSize: 12),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
