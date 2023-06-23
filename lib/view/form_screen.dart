@@ -52,7 +52,7 @@ class _FormScreenState extends State<FormScreen> {
                   textAlign: TextAlign.center,
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(),
-                    hintText: 'Dificultade:',
+                    hintText: 'Nível de dificultade:',
                     fillColor: Colors.white54,
                     filled: true,
                   ),
@@ -89,6 +89,10 @@ class _FormScreenState extends State<FormScreen> {
                   borderRadius: BorderRadius.circular(50),
                   child: Image.network(
                     imageController.text,
+                    errorBuilder: (BuildContext context, Object exception,
+                        StackTrace? stacktrace) {
+                      return Container();
+                    },
                     fit: BoxFit.cover,
                   ),
                 ),
